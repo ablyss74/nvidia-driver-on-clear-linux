@@ -3,10 +3,11 @@
 # shellcheck source=/dev/null
 [[ $(source "/etc/os-release" 2>/dev/null; echo "$ID") == "clear-linux-os" ]] || exit 1
 
-# Uninstaller script for NVIDIA driver on Clear Linux OS.
-# Usage: ./uninstall-driver
+echo "
+Uninstaller script for NVIDIA driver on Clear Linux OS.
+Usage: ./uninstall-driver
 
-# The uninstaller requires a non-graphical environment.
+The uninstaller requires a non-graphical environment."
 contflag=1 state=$(systemctl is-active graphical.target 2>&1)
 
 if [[ "$state" == "active" ]]; then
