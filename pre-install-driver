@@ -231,14 +231,14 @@ if [[ -f "/etc/kernel/cmdline" ]]; then
     fi
 fi
 
-# Set boot timeout (the default is no timeout).
-if [[ ! -f "/etc/kernel/timeout" ]]; then
-    update_boot=1
-    echo "Setting boot timeout to 5 seconds."
-    sudo tee "/etc/kernel/timeout" >/dev/null <<'EOF'
-5
-EOF
-fi
+## Set boot timeout (the default is no timeout).
+#if [[ ! -f "/etc/kernel/timeout" ]]; then
+#    update_boot=1
+#    echo "Setting boot timeout to 5 seconds."
+#    sudo tee "/etc/kernel/timeout" >/dev/null <<'EOF'
+#5
+#EOF
+#fi
 
 if [[ ${update_boot} -eq 1 ]]; then
     echo "Refreshing the boot configuration."
